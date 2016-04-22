@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package appsandroidsite.wordpress.com.test;
+package es.appsandroidsite.quepues.modelo;
 
 import javax.jws.WebService;
 import javax.jws.WebMethod;

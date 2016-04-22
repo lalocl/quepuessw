@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package appsandroidsite.wordpress.com.json;
+package es.appsandroidsite.quepues.json;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,10 +22,11 @@ public class JsonTransformerImplJackson implements JsonTransformer{
     public String toJson(Object data) {
         ObjectMapper objectmapper = new ObjectMapper();
         try {
+            
+        
             return objectmapper.writeValueAsString(data);
         } catch (JsonProcessingException ex) {
-          //  Logger.getLogger(JsonTransformerImplJackson.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException(ex);
+             throw new RuntimeException(ex);
         }
     }
 
@@ -36,10 +37,10 @@ public class JsonTransformerImplJackson implements JsonTransformer{
     public Object fromJson(String json, Class clazz) {
          ObjectMapper objectMapper = new ObjectMapper();
         try {
+        
             return objectMapper.readValue(json, clazz);
         } catch (IOException ex) {
-          //  Logger.getLogger(JsonTransformerImplJackson.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException(ex);
+         throw new RuntimeException(ex);
         }
        
         
