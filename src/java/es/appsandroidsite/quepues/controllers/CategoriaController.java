@@ -21,19 +21,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CategoriaController {
     
-  /*   @Autowired
+     @Autowired
     private JsonTransformer jsonTransformer;
-    */
+    
      
      @RequestMapping(value = {"/Categoria"})
     public void prueba(HttpServletRequest httpRequest, HttpServletResponse httpServletResponse) 
             throws IOException {
-        httpServletResponse.getWriter().println("Probando...");
+       // httpServletResponse.getWriter().println("Probando...");
         
-          /*  
+          
             Categoria c = new Categoria("Marketing","M");
             String jsonCategoria = jsonTransformer.toJson(c);
-            httpServletResponse.getWriter().println(jsonCategoria);*/
+            httpServletResponse.getWriter().println(jsonCategoria);
             
         
         

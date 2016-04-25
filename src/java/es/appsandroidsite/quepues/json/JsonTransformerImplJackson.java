@@ -6,6 +6,7 @@
 package es.appsandroidsite.quepues.json;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 
@@ -20,11 +21,13 @@ public class JsonTransformerImplJackson implements JsonTransformer{
     */
     @Override
     public String toJson(Object data) {
-        ObjectMapper objectmapper = new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper();
+         
         try {
+       /*           objectMapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true); 
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false); */
             
-        
-            return objectmapper.writeValueAsString(data);
+            return objectMapper.writeValueAsString(data);
         } catch (JsonProcessingException ex) {
              throw new RuntimeException(ex);
         }
@@ -38,6 +41,9 @@ public class JsonTransformerImplJackson implements JsonTransformer{
          ObjectMapper objectMapper = new ObjectMapper();
         try {
         
+          
+            objectMapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true); 
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false); 
             return objectMapper.readValue(json, clazz);
         } catch (IOException ex) {
          throw new RuntimeException(ex);
