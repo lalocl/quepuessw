@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path=""/>
+<Context antiJARLocking="true" path="/tests">
+
+ <Resource
+        type="javax.sql.DataSource"
+        auth="Container" 
+        name="jdbc/tests" 
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/tests"
+        username="tests" 
+        password="tests"
+        maxActive="100" 
+        maxIdle="30" 
+        maxWait="10000"
+        validationQuery="SELECT 1 FROM dual"
+     /> 
+</Context>

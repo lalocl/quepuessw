@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tests?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">tests</property>
+    <property name="hibernate.connection.password">tests</property>
+    <mapping resource="es/appsandroidsite/quepues/modelo/Opcion.hbm.xml"/>
+    <mapping resource="es/appsandroidsite/quepues/modelo/Url.hbm.xml"/>
+    <mapping resource="es/appsandroidsite/quepues/modelo/Categoria.hbm.xml"/>
+    <mapping resource="es/appsandroidsite/quepues/modelo/Test.hbm.xml"/>
+    <mapping resource="es/appsandroidsite/quepues/modelo/Pregunta.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

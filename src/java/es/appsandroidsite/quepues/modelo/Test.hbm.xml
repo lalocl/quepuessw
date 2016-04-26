@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-abr-2016 13:44:52 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="es.appsandroidsite.quepues.modelo.Test" table="test" catalog="tests" optimistic-lock="version">
+        <id name="codigo" type="string">
+            <column name="codigo" length="10" />
+            <generator class="identity" />
+        </id>
+        <property name="id" type="int">
+            <column name="id" not-null="true" unique="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="50" />
+        </property>
+        <property name="ultimaMod" type="timestamp">
+            <column name="ultima_mod" length="19" not-null="true" />
+        </property>
+        <set name="preguntas" table="pregunta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigo_test" length="10" />
+            </key>
+            <one-to-many class="es.appsandroidsite.quepues.modelo.Pregunta" />
+        </set>
+        <set name="urls" table="url" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigo_test" length="10" />
+            </key>
+            <one-to-many class="es.appsandroidsite.quepues.modelo.Url" />
+        </set>
+    </class>
+</hibernate-mapping>
