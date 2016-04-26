@@ -11,24 +11,21 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
  * @author laura
  */
-@Controller
-public class CategoriaController {
+public class UrlController {
     
      @Autowired
     private JsonTransformer jsonTransformer;
-    
      
      @RequestMapping(value = {"/Categoria"})
     public void prueba(HttpServletRequest httpRequest, HttpServletResponse httpServletResponse) 
             throws IOException {
-       // httpServletResponse.getWriter().println("Probando...");
+      
         
           
             Categoria c = new Categoria();
@@ -36,13 +33,6 @@ public class CategoriaController {
             c.setNombre("Marketing");
             String jsonCategoria = jsonTransformer.toJson(c);
             httpServletResponse.getWriter().println(jsonCategoria);
-            
-        
-        
-      
-     
-}
     
 }
-
-
+}

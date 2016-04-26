@@ -28,12 +28,5 @@
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
     
-      <servlet>
-        <servlet-name>Jeysey Web Application</servlet-name> 
-        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-        <load-on-startup>1</load-on-startup> 
-          <servlet-mapping>
-        <servlet-name>Jeysey Web Application</servlet-name> 
-        <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping>
+ 
 </web-app>
