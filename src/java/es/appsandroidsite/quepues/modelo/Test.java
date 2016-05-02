@@ -22,6 +22,11 @@ public class Test  implements java.io.Serializable {
     public Test() {
     }
 
+    public Test(String codigo) {
+        this.codigo = codigo;
+    }
+
+    
 	
     public Test(int id, Date ultimaMod) {
         this.id = id;
