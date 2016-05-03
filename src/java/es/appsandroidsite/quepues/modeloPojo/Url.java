@@ -21,6 +21,13 @@ public class Url {
      
       public Url() {
     }
+	   public Url(String categoria, String test, String subCategoria, String url) {
+		super();
+		this.categoria = categoria;
+		this.test = test;
+		this.subCategoria = subCategoria;
+		this.url = url;
+	}
 
     public Integer getId() {
         return id;

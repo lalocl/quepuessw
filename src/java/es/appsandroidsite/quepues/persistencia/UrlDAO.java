@@ -8,6 +8,7 @@ package es.appsandroidsite.quepues.persistencia;
 //import es.appsandroidsite.quepues.modelo.Url;
 import es.appsandroidsite.quepues.modeloPojo.Url;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -24,5 +25,7 @@ public interface UrlDAO {
     void delete(int idUrl) throws BussinessException;
 
     List<Url> findAll() throws BussinessException;
+    
+    List<Url> findFilter(Map<String, String> filtro) throws BussinessException;
     
 }
